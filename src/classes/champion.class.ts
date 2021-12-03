@@ -7,6 +7,6 @@ export default class Champion {
     this.lifepoints = lifepoints;
   }
   attack(){
-
+    console.log("attack")
   }
 }
