@@ -9,6 +9,9 @@ let newMage : Mage  = new Mage("Gandoulfe",20,4)
 
 function fightRound(roundNumber:number){
   console.log(`Fight Night : this is round ${roundNumber}`)
+  if(newKnight.protected === false){
+    newKnight.protect();
+  }
   newKnight.attack(newArcher);
   newMage.attack(newKnight);
   newArcher.attack(newMage);
