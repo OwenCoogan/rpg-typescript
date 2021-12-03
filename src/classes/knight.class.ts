@@ -3,5 +3,6 @@ export default class Knight extends Champion{
 
   protect(){
     this.protected =true;
+    this.timedOut = true;
   }
 }
