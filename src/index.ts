@@ -3,25 +3,19 @@ import Archer from './classes/archer.class'
 import Mage from './classes/mage.class'
 
 let newKnight : Knight  = new Knight("DumbDumb",20,6)
-let newArcher : Archer  = new Knight("Badshot",20,5)
-let newMage : Mage  = new Knight("Gandoulfe",20,4)
+let newArcher : Archer  = new Archer("Badshot",20,5)
+let newMage : Mage  = new Mage("Gandoulfe",20,4)
 
-newKnight.attack(newArcher);
-newMage.attack(newKnight);
-newArcher.attack(newMage);
 
-newKnight.attack(newArcher);
-newMage.attack(newKnight);
-newArcher.attack(newMage);
+function fightRound(roundNumber:number){
+  console.log(`Fight Night : this is round ${roundNumber}`)
+  newKnight.attack(newArcher);
+  newMage.attack(newKnight);
+  newArcher.attack(newMage);
+}
 
-newKnight.attack(newArcher);
-newMage.attack(newKnight);
-newArcher.attack(newMage);
-
-newKnight.attack(newArcher);
-newMage.attack(newKnight);
-newArcher.attack(newMage);
-
-newKnight.attack(newArcher);
-newMage.attack(newKnight);
-newArcher.attack(newMage);
+fightRound(1)
+fightRound(2)
+fightRound(3)
+fightRound(4)
+fightRound(5)
