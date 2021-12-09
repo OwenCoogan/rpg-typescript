@@ -23,13 +23,14 @@ export default class NewChampion implements Champion {
         if (opponent.protected === true ){
           console.log(`${this.name} attacked & kicked ${opponent.name}.`);
           console.log(`${opponent.name} blocked the blow`);
-          opponent.protected = false;
+          opponent.protected = !this.timedOut;
         }
         else {
           console.log(`${opponent.name} had ${opponent.lifepoints} points`)
           opponent.lifepoints = opponent.lifepoints - this.hitpoints;
           console.log(`${this.name} attacked & kicked ${opponent.name}.`);
           this.timedOut = !this.timedOut;
+
           if (opponent.lifepoints <= 0){
             console.log(`${opponent.name} is dead !`)
           }
