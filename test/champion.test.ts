@@ -3,13 +3,14 @@ import Archer from '../src/classes/archer.class'
 import Mage from '../src/classes/mage.class'
 
 describe("Champion", () => {
-  let knight: Knight = new Knight("DumbDumb Morty",19,6)
 
+  let knight: Knight = new Knight("DumbDumb Morty",19,6)
   let deadKnight: Knight = new Knight("DumbDumb Morty",0,5)
   let archer: Archer = new Archer("PhoenixPerson",19,4)
   let mage: Mage = new Mage("Rick Sanchez",10,4)
 
   test('cannot hit a dead character', () => {
+    expect(deadKnight.lifepoints).toBe(0)
     knight.attack(deadKnight)
     expect(deadKnight.lifepoints).toBe(0)
   });
@@ -17,7 +18,7 @@ describe("Champion", () => {
     knight.attack(archer)
     expect(archer.lifepoints).toBe(13);
   });
-  test('should properly switch between timedOut true & false for ', () => {
+  test('should properly switch between timedOut true & false for the archer\'s critical hit', () => {
 
     expect(archer.timedOut).toBe(false);
     archer.attack(knight);
