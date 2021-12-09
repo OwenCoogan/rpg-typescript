@@ -10,13 +10,13 @@ let newMage : Mage  = new Mage("Gandoulfe",20,4)
 function fightRound(roundNumber:number){
   console.log(`Fight Night : this is round ${roundNumber}`)
   newKnight.attack(newArcher);
-  newArcher.timedOut === false ? newArcher.doubleTap(newMage) : newArcher.attack(newMage)
+  newArcher.timedOut === true ? newArcher.attack(newMage) : newArcher.doubleTap(newMage)
   newMage.attack(newKnight);
-  if(newArcher.timedOut === true){
-    newArcher.timedOut = false;
-  }
   if(newKnight.protected === false && newKnight.timedOut === false ){
     newKnight.protect();
+  }
+  if(newMage.lifepoints > 0 && newMage.timedOut === false){
+    newMage.heal();
   }
 }
 

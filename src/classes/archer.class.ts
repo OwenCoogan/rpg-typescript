@@ -13,8 +13,7 @@ export default class Archer extends Champion{
       else if(opponent.lifepoints <= 0){
         console.log(`${opponent.name} is dead !`)
       }
-      this.timedOut = true;
     }
-
+    this.timedOut = true;
   }
 }

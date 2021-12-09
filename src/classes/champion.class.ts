@@ -1,11 +1,9 @@
 export default class Champion {
-
   name:string;
   lifepoints:number;
   hitpoints:number;
   protected:boolean;
   timedOut:boolean;
-
   constructor(name: string,lifepoints:number, hitpoints:number) {
     this.name = name;
     this.lifepoints = lifepoints;
@@ -28,6 +26,7 @@ export default class Champion {
           console.log(`${opponent.name} had ${opponent.lifepoints} points`)
           opponent.lifepoints = opponent.lifepoints - this.hitpoints;
           console.log(`${this.name} attacked & kicked ${opponent.name}.`);
+          this.timedOut = !this.timedOut;
           if(opponent.lifepoints <= 0){
             console.log(`${opponent.name} is dead !`)
           }
@@ -35,7 +34,6 @@ export default class Champion {
             console.log(`${opponent.name} now has ${opponent.lifepoints} points`);
           }
         }
-
       }
     }
     else{
