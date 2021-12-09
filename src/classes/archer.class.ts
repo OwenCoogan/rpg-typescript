@@ -1,6 +1,6 @@
-import Champion from '../classes/champion.class'
-export default class Archer extends Champion{
-  doubleTap(opponent : Champion ){
+import NewChampion from '../classes/champion.class'
+export default class Archer extends NewChampion{
+  doubleTap(opponent : NewChampion ){
     if(opponent.lifepoints <= 0){
       console.log('you\'re kicking a corpse idiot')
     }

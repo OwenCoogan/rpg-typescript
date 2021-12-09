@@ -1,5 +1,5 @@
-import Champion from '../classes/champion.class'
-export default class Knight extends Champion{
+import NewChampion from '../classes/champion.class'
+export default class Knight extends NewChampion{
 
   protect(){
     this.protected =true;
