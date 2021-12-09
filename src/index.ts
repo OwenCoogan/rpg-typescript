@@ -22,11 +22,12 @@ function fightRound(roundNumber:number) {
 
     champions.forEach(champion => {
       if(i===3){
+
         champion.attack(champions[0]);
         i=0;
       }
       else{
-        champion.attack(champions[i]);
+        champion === newArcher && champion.timedOut === false? newArcher.doubleTap(champions[i]) :champion.attack(champions[i])
         i=i+1;
       }
     });
