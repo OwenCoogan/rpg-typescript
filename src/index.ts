@@ -19,10 +19,10 @@ function fightRound(roundNumber:number) {
     newMage.heal();
   }
   const champions = [newKnight,newArcher,newMage,newKnight1];
+  const deadChampions = [];
 
     champions.forEach(champion => {
       if(i===champions.length){
-
         champion.attack(champions[0]);
         i=0;
       }
@@ -33,5 +33,5 @@ function fightRound(roundNumber:number) {
     });
 }
 
-const rounds = [1,2,3,4,5]
+const rounds = [1,2,3,4,5,6]
 rounds.forEach(round => fightRound(round))
