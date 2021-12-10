@@ -8,8 +8,8 @@ let newArcher : Archer  = new Archer("Badshot",20,5)
 let newMage : Mage  = new Mage("Gandoulfe",20,4)
 
 let i= 1;
-
 let champions = [newKnight,newArcher,newMage,newKnight1];
+
 function fightRound(roundNumber:number) {
   console.log(`Fight Night : this is round ${roundNumber}`);
   if(newKnight.protected === false && newKnight.timedOut === false ){
@@ -18,22 +18,22 @@ function fightRound(roundNumber:number) {
   if(newMage.lifepoints > 0 && newMage.timedOut === false){
     newMage.heal();
   }
-  const deadChampions = new Array;
     champions.forEach(champion => {
       if(champions.length === 1){
         console.log(`${champion.name} is the winner , whoop whoop`);
       }
-      if(champion.lifepoints <=0){
-        champions.splice(i)
-        deadChampions.push(champion);
-      }
-      else if(i===champions.length){
-        champion.attack(champions[0]);
-        i=0;
-      }
       else{
-        champion === newArcher && champion.timedOut === false? newArcher.doubleTap(champions[i]) :champion.attack(champions[i])
-        i=i+1;
+        if(champion.lifepoints <=0){
+          champions.splice(i);
+        }
+        else if(i===champions.length){
+          champion.attack(champions[0]);
+          i=0;
+        }
+        else{
+          champion === newArcher && champion.timedOut === false? newArcher.doubleTap(champions[i]) :champion.attack(champions[i])
+          i=i+1;
+        }
       }
     });
 }
